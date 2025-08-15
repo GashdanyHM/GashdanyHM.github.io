@@ -46,24 +46,7 @@
     <br><br>With a strong focus on developing more interactive web narratives and visual novels, they are dedicated to creating works that provide new perspectives and allow audiences to feel deeply connected to their own moments of reflection. Their art seeks to make the unseen and unarticulated aspects of life tangible and resonant.</p>
     </main>
     <div class="sketch-container"></div>
-    <script>
-        // Move the p5.js canvas into the container after it's created
-        window.addEventListener('DOMContentLoaded', function() {
-            var interval = setInterval(function() {
-                var canvas = document.querySelector('canvas');
-                var container = document.querySelector('.sketch-container');
-                if (canvas && container && !container.contains(canvas)) {
-                    container.appendChild(canvas);
-                    canvas.style.display = 'block';
-                    canvas.style.margin = '0 auto';
-                    canvas.style.maxWidth = '100%';
-                }
-                if (canvas && container && container.contains(canvas)) {
-                    clearInterval(interval);
-                }
-            }, 100);
-        });
-    </script>
+
     <script src="sketch.js"></script>
         <style>
             .profile-header {
