@@ -32,12 +32,38 @@
                 <h4>(they/them)</h4>
             </div>
         </div>
-    <p> Danny Chen is a multi-disciplinary artist and fourth-year UCSB student, originally from Shenzhen, China, and now based in Santa Barbara, California. Driven by a desire to master a diverse set of creative disciplines, they describe their approach as having a "unicorn" mentality. Their artistic practice is a dynamic blend of photography, game design, and interactive web narratives.
+    <p><a href="Folder for Portfolio/index.html">portfolio</a></p>
+    <p> Danny Chen is a multi-disciplinary artist and fourth-year UCSB student, originally from Shenzhen, China, and now based in Santa Barbara, California. 
+        Driven by a desire to master a diverse set of creative disciplines, they describe their approach as having a "unicorn" mentality. 
+        Their artistic practice is a dynamic blend of photography, game design, and interactive web narratives.
 
-    <br><br>Their work consistently explores moments of profound human experience, focusing on feelings of solitude, the sense of being fully present in one's environment, and the sudden recognition of being alive. Their photography has evolved from capturing landscapes to a focus on street scenes, but always with an eye for these introspective moments. Their interactive work, including sound design, aims to create a strong emotional connection with the audience. 
+    <br><br>Their work consistently explores moments of profound human experience, 
+        focusing on feelings of solitude, the sense of being fully present in one's environment, 
+        and the sudden recognition of being alive. Their photography has evolved from capturing landscapes to a focus on street scenes, 
+        but always with an eye for these introspective moments. 
+        Their interactive work, including sound design, aims to create a strong emotional connection with the audience. 
 
     <br><br>With a strong focus on developing more interactive web narratives and visual novels, they are dedicated to creating works that provide new perspectives and allow audiences to feel deeply connected to their own moments of reflection. Their art seeks to make the unseen and unarticulated aspects of life tangible and resonant.</p>
     </main>
+    <div class="sketch-container"></div>
+    <script>
+        // Move the p5.js canvas into the container after it's created
+        window.addEventListener('DOMContentLoaded', function() {
+            var interval = setInterval(function() {
+                var canvas = document.querySelector('canvas');
+                var container = document.querySelector('.sketch-container');
+                if (canvas && container && !container.contains(canvas)) {
+                    container.appendChild(canvas);
+                    canvas.style.display = 'block';
+                    canvas.style.margin = '0 auto';
+                    canvas.style.maxWidth = '100%';
+                }
+                if (canvas && container && container.contains(canvas)) {
+                    clearInterval(interval);
+                }
+            }, 100);
+        });
+    </script>
     <script src="sketch.js"></script>
         <style>
             .profile-header {
@@ -51,6 +77,11 @@
                 height: 80px;
                 object-fit: cover;
                 border-radius: 50%;
+            }
+            .sketch-container {
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
 </body>
