@@ -2,7 +2,7 @@
 // prompt: write a p5js sketch that draws a painting in the abstract and colorful style of Wassily Kandinsky. Add animation. Give the just the javascript.
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(400, 400);
   background(255);
   noLoop();
 }
