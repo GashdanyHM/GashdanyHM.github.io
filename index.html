@@ -1,71 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
-    <script src="sketch.js"></script>
-    
-    <title>Gashdany</title>
-    <style>
-        body {
-            background: #e0f4f2; /* light gray-blue-green */
-            color: #145c5c;      /* dark blue-green */
-            font-family: "Times New Roman", Times, serif;
-            margin: 0;
-            padding: 0;
-               padding: 0 2rem;
-               max-width: 700px;
-               margin-left: auto;
-               margin-right: auto;
-        }
-        h1, h4, p {
-            color: #145c5c;
-        }
-    </style>
+    <title>Danny Chen</title>
+    <link rel="stylesheet" href="newstyles.css">
 </head>
 <body>
-    <main>
-        <div class="profile-header">
-            <img src="Gashdany_prof.jpg" class="profile-img" alt="Danny Chen profile photo">
-            <div>
-                <h1>Danny Chen</h1>
-                <h4>(they/them)</h4>
-            </div>
-        </div>
-    <p><a href="Folder for Portfolio/index.html">portfolio</a></p>
-    <p> Danny Chen is a multi-disciplinary artist and fourth-year UCSB student, originally from Shenzhen, China, and now based in Santa Barbara, California. 
-        Driven by a desire to master a diverse set of creative disciplines, they describe their approach as having a "unicorn" mentality. 
-        Their artistic practice is a dynamic blend of photography, game design, and interactive web narratives.
+    <!-- 互动背景将在这里生成 -->
+    <canvas id="interactive-canvas"></canvas>
 
-    <br><br>Their work consistently explores moments of profound human experience, 
-        focusing on feelings of solitude, the sense of being fully present in one's environment, 
-        and the sudden recognition of being alive. Their photography has evolved from capturing landscapes to a focus on street scenes, 
-        but always with an eye for these introspective moments. 
-        Their interactive work, including sound design, aims to create a strong emotional connection with the audience. 
+    <!-- 主内容容器 -->
+    <div class="container">
+        <header class="profile">
+            <img src="Gashdany_prof.jpg" alt="Danny Chen 的头像" class="profile-image">
+            <h1 class="profile-name">Danny Chen</h1>
+            <p class="profile-title">Photographer / Chemical Engineer / Web Narrative Developer</p>
+            <!-- 主导航 Tab (已修正 data-section 为 data-target) -->
+            <nav class="main-nav">
+                <a href="#about" class="nav-link active" data-target="about">About Me</a>
+                <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+            </nav>
+        </header>
 
-    <br><br>With a strong focus on developing more interactive web narratives and visual novels, they are dedicated to creating works that provide new perspectives and allow audiences to feel deeply connected to their own moments of reflection. Their art seeks to make the unseen and unarticulated aspects of life tangible and resonant.</p>
-    </main>
-    <div id="sketch"></div>
+        <main>
+            <!-- “关于我”区域 -->
+            <section id="about" class="content-section active">
+                <h2>About Me</h2>
+                <p>Danny Chen is a multi-disciplinary artist and fourth-year UCSB student, originally from Shenzhen, China, and now based in Santa Barbara, California. Driven by a desire to master a diverse set of creative disciplines, they describe their approach as having a "unicorn" mentality. Their artistic practice is a dynamic blend of photography, game design, and interactive web narratives.</p>
+                <p>With a strong focus on developing more interactive web narratives and visual novels, they are dedicated to creating works that provide new perspectives and allow audiences to feel deeply connected to their own moments of reflection. Their art seeks to make the unseen and unarticulated aspects of life tangible and resonant.</p>
+                <p>They are currently exploring the intersection of technology and art, using their skills to create immersive experiences that engage viewers on multiple sensory levels. Their work consistently explores moments of profound human experience, focusing on feelings of solitude, the sense of being fully present in one's environment, and the sudden recognition of being alive.</p>
+                <p>Through their photography, they capture the essence of street scenes and landscapes, always with an eye for introspective moments. Their interactive work, including sound design, aims to create a strong emotional connection with the audience.</p>
+                <p>In their projects, they strive to create a dialogue between the viewer and the artwork, inviting audiences to reflect on their own experiences and emotions. Their goal is to create art that resonates deeply, allowing viewers to find solace and connection in the shared human experience.</p></section>
 
-        <style>
-            .profile-header {
-                display: flex;
-                align-items: center;
-                gap: 1.2rem;
-                margin-bottom: 1.2rem;
-            }
-            .profile-img {
-                width: 80px;
-                height: 80px;
-                object-fit: cover;
-                border-radius: 50%;
-            }
-            .sketch-container {
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
+            <!-- “项目列表”区域 -->
+            <section id="projects" class="content-section">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <!-- 项目 1 卡片 -->
+                    <div class="project-card">
+                        <img src="Folder for Portfolio/Project 1/Project1_page1.jpg" alt="Project Object Head: W 的图片">
+                        <div class="project-info">
+                            <h3 class="project-title">Project Object Head: W</h3>
+                            <p class="project-description">An Object Head object aimed to explore inner self.</p>
+                            <a href="#project-detail-1" class="project-link" data-target="project-detail-1">Details &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- 项目 2 卡片 -->
+                    <div class="project-card">
+                        <img src="Folder for Portfolio/Project 2/Overview.jpg" alt="The Moon Remembers What The Reef Remembers 的视频截图">
+                        <div class="project-info">
+                            <h3 class="project-title">The Moon Remembers What The Reef Remembers</h3>
+                            <p class="project-description">An artistic display to raise environmental awareness</p>
+                            <a href="#project-detail-2" class="project-link" data-target="project-detail-2">Details &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- 项目 3 卡片 -->
+                    <div class="project-card">
+                        <img src="Folder for Portfolio/Project 3/Project3_cover.jpg" alt="A DAY... OR... SOMething LIKE THAT 的截图">
+                        <div class="project-info">
+                            <h3 class="project-title">Someday... (WIP)</h3>
+                            <p class="project-description">A surreal web narrative that tells a story between dreams and reality.</p>
+                            <a href="#project-detail-3" class="project-link" data-target="project-detail-3">Details &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================== -->
+            <!--            项目详情区域 (作为可切换的内容)            -->
+            <!-- ===================================================== -->
+
+            <!-- 项目 1 详情 -->
+            <section id="project-detail-1" class="content-section project-detail">
+                <div class="detail-header">
+                    <a href="#projects" class="back-button" data-target="projects">&larr; Back</a>
+                    <h2>Project Object Head: W</h2>
+                </div>
+
+                <p>Living in a busy, fast-growing environment with information flying by swiftly, it has become more difficult to focus and explore our inner self. Numerous people have numerous times when they feel empty, useless, depressed. Some may seek company of those who accept and welcome them when they are at their most miserable place. Object Head: W could be someone like that. An object head is a combination of a human-like body with an inanimate object for a head, giving a "soul" to something that wasn't alive in "reality". Creating through a surreal atmosphere, emotions and personality may be conveyed through the object itself while the needed ones can find salvation through connecting souls with them.</p>
+                <p>Project Object Head: W is an object head inspired from waves crashing on to the beach. The come and go of ocean waves interacts with whoever is watching at it, as if a friend is calming and playing with them. The letter "W" is just a symbol for this object head design, it could be a representation of "water" "waves" "wooo~" or any names/words the audience can resonate the most. </p>
+                <p>To those who enjoys ocean thematic representation, abstraction, and who may wants accompany of a friend..</p>
+                <div class="detail-media-gallery">
+                    <img src="Folder for Portfolio/Project 1/Project1_page1.jpg" alt="Project 1 Page 1">
+                    <img src="Folder for Portfolio/Project 1/Project1_page2.jpg" alt="Project 1 Page 2">
+                    <img src="Folder for Portfolio/Project 1/Project1_page3.jpg" alt="Project 1 Page 3">
+                </div>
+            </section>
+
+            <!-- 项目 2 详情 -->
+            <section id="project-detail-2" class="content-section project-detail">
+                <div class="detail-header">
+                    <a href="#projects" class="back-button" data-target="projects">&larr; Back</a>
+                    <h2>The Moon Remembers What The Reef Remembers</h2>
+                </div>
+                <div class="detail-media-gallery">
+                    <!-- 在 iframe 外面添加了一个容器 div -->
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0BBilHToiX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>As our environment continues to deteriorate due to human behavior, we strive to create an installation which resonates specifically with our community on the coast. Marine ecosystems fall victim to pollution, destructive fishing practices, coastal development, and climate change, all of which contribute to reef degradation. These activities disrupt the delicate balance of the reef ecosystem leading to coral bleaching, algal overgrowth, and habitat loss.</p>
+                <p>In this project, the moon silently attempts to communicate with us by illuminating not just the surface beauty we admire, but also the urgency of what lies beneath. When the moon hangs up high, the ocean silently accepts the gentle moonlight. But the cries of reefs, seagulls, whales, and all other ocean creatures can’t be unheard; the more awful scents of brine can’t be unsmelled; the muddy color of seawater and the fading color of the corals can’t be unseen… This information is delivered through the 4 senses: sight, hearing, smell, and touch, raising environmental awareness through a strong contrast between the healthy and the unwell, what stays constant and what varies.</p>
+                <p>The Moon Illuminates What the Reef Remembers invites viewers into an intimate exchange between celestial constancy and terrestrial fragility. In this installation, the moon’s steady glow reveals the reef as a living archive and an ecosystem that remembers the suffering it has undergone due to modern human activity. Every tide, pulled by the moon’s gravitational force, uncovers and conceals layers of life and loss hidden beneath the water’s surface.</p>
+            </section>
+
+            <!-- 项目 3 详情 -->
+            <section id="project-detail-3" class="content-section project-detail">
+                <div class="detail-header">
+                    <a href="#projects" class="back-button" data-target="projects">&larr; Back</a>
+                    <h2>A DAY... OR... SOMETHING LIKE THAT (WIP)</h2>
+                </div>
+                <div class="detail-media-gallery">
+                    <img src="Folder for Portfolio/Project 3/Project3_cover.jpg" alt="A DAY... OR... SOMETHING LIKE THAT 的截图">
+                </div>
+                <p>This will be a 2D Surrealist Point-and-Click Narrative Game. It is a surreal, looping adventure where the player, as an anonymous protagonist, choose between staying in the bed or get up to spend their day experiencing whatever is happening in the chaotic, apocalyptic world outside. In this overt path, they are free to explore different places (store, school, street, Space, park) in the world and interact with NPCs (store's staff, NPC on street) and bizarre objects—like a cactus that can become a demon lord—and uncover countless endings (achievements system will be implemented to show the unlocked/locked endings). At the end of the day, no matter what ending the player achieved, they will always be back to bed and wake up to a new day (a new loop). Therefore, this game combines branching and looping, where the different branches eventually loops back to the same starting point.</p>
+                <p>** A hidden narrative also exist, but it's up to how the player would interpret the game. As they repeatedly play, the true locations are revealed to be the game world itself and their own reality. Eventually, the game confronts you, the player, directly. Its central question transforms: “Do you want to keep sleeping?” becomes “Do you want to keep playing?” The ultimate choice is not for the character, but for the player—to remain immersed in the game’s loop or to truly ‘wake up’ and return to your own life.</p>
+                <div class="external-links">
+                    <a href="https://miro.com/app/board/uXjVJU5kMAg=/?share_link_id=12706835295" target="_blank" rel="noopener">Miro board &rarr;</a>
+                    <a href="https://editor.p5js.org/GashdanyHM/full/zCqRSON0v" target="_blank" rel="noopener"> Demo &rarr;</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="newscript.js"></script>
 </body>
 </html>
