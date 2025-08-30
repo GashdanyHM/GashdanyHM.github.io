@@ -123,6 +123,13 @@ h2 {
     gap: 2rem;
 }
 
+/* 新增：项目卡片链接样式 */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 /* 项目卡片样式 */
 .project-card {
     background-color: rgba(34, 34, 34, 0.5);
@@ -132,6 +139,7 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100%; /* 确保卡片在网格中等高 */
 }
 
 .project-card:hover {
@@ -164,12 +172,14 @@ h2 {
     flex-grow: 1;
 }
 
-.project-link {
+/* 新增：卡片底部的提示文字 */
+.project-details-prompt {
     color: var(--link-color);
-    text-decoration: none;
     font-weight: bold;
     cursor: pointer;
+    align-self: flex-start;
 }
+
 
 /* ===================================================== */
 /* 项目详情页样式                             */
@@ -210,7 +220,7 @@ h2 {
     border-radius: 8px;
 }
 
-/* 新增：响应式视频容器样式 */
+/* 响应式视频容器样式 */
 .video-container {
     position: relative;
     width: 100%;
