@@ -16,7 +16,7 @@
             <img src="Gashdany_prof.jpg" alt="Danny Chen 的头像" class="profile-image">
             <h1 class="profile-name">Danny Chen</h1>
             <p class="profile-title">Photographer / Chemical Engineer / Web Narrative Developer</p>
-            <!-- 主导航 Tab (已修正 data-section 为 data-target) -->
+            <!-- 主导航 Tab -->
             <nav class="main-nav">
                 <a href="#about" class="nav-link active" data-target="about">About Me</a>
                 <a href="#projects" class="nav-link" data-target="projects">Projects</a>
@@ -25,45 +25,49 @@
 
         <main>
             <!-- “关于我”区域 -->
-            <section id="about" class="content-section active">
+            <section id="about" class="content-section">
                 <h2>About Me</h2>
                 <p>Danny Chen is a multi-disciplinary artist and fourth-year UCSB student, originally from Shenzhen, China, and now based in Santa Barbara, California. Driven by a desire to master a diverse set of creative disciplines, they describe their approach as having a "unicorn" mentality. Their artistic practice is a dynamic blend of photography, game design, and interactive web narratives.</p>
                 <p>With a strong focus on developing more interactive web narratives and visual novels, they are dedicated to creating works that provide new perspectives and allow audiences to feel deeply connected to their own moments of reflection. Their art seeks to make the unseen and unarticulated aspects of life tangible and resonant.</p>
-                <p>They are currently exploring the intersection of technology and art, using their skills to create immersive experiences that engage viewers on multiple sensory levels. Their work consistently explores moments of profound human experience, focusing on feelings of solitude, the sense of being fully present in one's environment, and the sudden recognition of being alive.</p>
-                <p>Through their photography, they capture the essence of street scenes and landscapes, always with an eye for introspective moments. Their interactive work, including sound design, aims to create a strong emotional connection with the audience.</p>
-                <p>In their projects, they strive to create a dialogue between the viewer and the artwork, inviting audiences to reflect on their own experiences and emotions. Their goal is to create art that resonates deeply, allowing viewers to find solace and connection in the shared human experience.</p></section>
+            </section>
 
             <!-- “项目列表”区域 -->
             <section id="projects" class="content-section">
                 <h2>Projects</h2>
                 <div class="project-grid">
-                    <!-- 项目 1 卡片 -->
-                    <div class="project-card">
-                        <img src="Folder for Portfolio/Project 1/Project1_page1.jpg" alt="Project Object Head: W 的图片">
-                        <div class="project-info">
-                            <h3 class="project-title">Project Object Head: W</h3>
-                            <p class="project-description">An Object Head object aimed to explore inner self.</p>
-                            <a href="#project-detail-1" class="project-link" data-target="project-detail-1">Details &rarr;</a>
+                    <!-- 项目 1 卡片 (整个卡片被链接包裹) -->
+                    <a href="#project-detail-1" class="project-card-link" data-target="project-detail-1">
+                        <div class="project-card">
+                            <img src="Folder for Portfolio/Project 1/Project1_page1.jpg" alt="Project Object Head: W 的图片">
+                            <div class="project-info">
+                                <h3 class="project-title">Project Object Head: W</h3>
+                                <p class="project-description">An Object Head object aimed to explore inner self.</p>
+                                <span class="project-details-prompt">View Details &rarr;</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- 项目 2 卡片 -->
-                    <div class="project-card">
-                        <img src="Folder for Portfolio/Project 2/Overview.jpg" alt="The Moon Remembers What The Reef Remembers 的视频截图">
-                        <div class="project-info">
-                            <h3 class="project-title">The Moon Remembers What The Reef Remembers</h3>
-                            <p class="project-description">An artistic display to raise environmental awareness</p>
-                            <a href="#project-detail-2" class="project-link" data-target="project-detail-2">Details &rarr;</a>
+                    <a href="#project-detail-2" class="project-card-link" data-target="project-detail-2">
+                        <div class="project-card">
+                            <img src="Folder for Portfolio/Project 2/Overview.jpg" alt="The Moon Remembers What The Reef Remembers 的视频截图">
+                            <div class="project-info">
+                                <h3 class="project-title">The Moon Remembers What The Reef Remembers</h3>
+                                <p class="project-description">An artistic display to raise environmental awareness</p>
+                                <span class="project-details-prompt">View Details &rarr;</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- 项目 3 卡片 -->
-                    <div class="project-card">
-                        <img src="Folder for Portfolio/Project 3/Project3_cover.jpg" alt="A DAY... OR... SOMething LIKE THAT 的截图">
-                        <div class="project-info">
-                            <h3 class="project-title">Someday... (WIP)</h3>
-                            <p class="project-description">A surreal web narrative that tells a story between dreams and reality.</p>
-                            <a href="#project-detail-3" class="project-link" data-target="project-detail-3">Details &rarr;</a>
+                    <a href="#project-detail-3" class="project-card-link" data-target="project-detail-3">
+                        <div class="project-card">
+                            <img src="Folder for Portfolio/Project 3/Project3_cover.jpg" alt="A DAY... OR... SOMething LIKE THAT 的截图">
+                            <div class="project-info">
+                                <h3 class="project-title">Someday... (WIP)</h3>
+                                <p class="project-description">A surreal web narrative that tells a story between dreams and reality.</p>
+                                <span class="project-details-prompt">View Details &rarr;</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </section>
 
@@ -77,7 +81,6 @@
                     <a href="#projects" class="back-button" data-target="projects">&larr; Back</a>
                     <h2>Project Object Head: W</h2>
                 </div>
-
                 <p>Living in a busy, fast-growing environment with information flying by swiftly, it has become more difficult to focus and explore our inner self. Numerous people have numerous times when they feel empty, useless, depressed. Some may seek company of those who accept and welcome them when they are at their most miserable place. Object Head: W could be someone like that. An object head is a combination of a human-like body with an inanimate object for a head, giving a "soul" to something that wasn't alive in "reality". Creating through a surreal atmosphere, emotions and personality may be conveyed through the object itself while the needed ones can find salvation through connecting souls with them.</p>
                 <p>Project Object Head: W is an object head inspired from waves crashing on to the beach. The come and go of ocean waves interacts with whoever is watching at it, as if a friend is calming and playing with them. The letter "W" is just a symbol for this object head design, it could be a representation of "water" "waves" "wooo~" or any names/words the audience can resonate the most. </p>
                 <p>To those who enjoys ocean thematic representation, abstraction, and who may wants accompany of a friend..</p>
@@ -95,7 +98,6 @@
                     <h2>The Moon Remembers What The Reef Remembers</h2>
                 </div>
                 <div class="detail-media-gallery">
-                    <!-- 在 iframe 外面添加了一个容器 div -->
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/0BBilHToiX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
