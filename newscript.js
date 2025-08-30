@@ -19,20 +19,17 @@
     window.addEventListener('mouseout', function() { mouse.x = undefined; mouse.y = undefined; });
     init(); animate();
 
-    // --- 全新的层级式视图切换逻辑 ---
-    // --- New Hierarchical View Switching Logic ---
+    // --- 视图切换逻辑 (已集成 History API) ---
     const allContentSections = document.querySelectorAll('.content-section');
-    const allNavTriggers = document.querySelectorAll('.nav-link, .project-link, .back-button');
+    const allNavTriggers = document.querySelectorAll('.nav-link, .project-card-link, .back-button');
     const mainNavLinks = document.querySelectorAll('.nav-link');
 
-    // 切换视图的函数
-    function switchView(targetId) {
-        // 隐藏所有内容区域
+    // 切换视图并更新浏览器历史记录
+    function switchView(targetId, fromHistory = false) {
         allContentSections.forEach(section => {
             section.classList.remove('active');
         });
 
-        // 显示目标区域
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.classList.add('active');
@@ -40,19 +37,33 @@
 
         // 更新主导航 Tab 的高亮状态
         mainNavLinks.forEach(navLink => {
-            // 如果目标是项目详情页，则保持“项目”Tab高亮
             const isProjectDetail = targetId.includes('project-detail');
             const navTarget = navLink.getAttribute('data-target');
-            
             if ((isProjectDetail && navTarget === 'projects') || (navTarget === targetId)) {
                 navLink.classList.add('active');
             } else {
                 navLink.classList.remove('active');
             }
         });
+        
+        // 如果不是由 history.back() 或 forward() 触发的，则更新 URL hash
+        if (!fromHistory) {
+            // 使用 pushState 来创建新的历史记录
+            history.pushState({ section: targetId }, '', `#${targetId}`);
+        }
     }
 
-    //为所有导航触发器（Tab、项目链接、返回按钮）添加事件监听
+    // 处理浏览器前进/后退事件
+    function handleHistoryChange(event) {
+        // event.state 可能为 null, 比如页面初次加载时
+        const targetId = event.state ? event.state.section : (location.hash.substring(1) || 'about');
+        switchView(targetId, true);
+    }
+    
+    // 监听 popstate 事件 (浏览器的前进/后退按钮)
+    window.addEventListener('popstate', handleHistoryChange);
+
+    // 为所有导航触发器添加事件监听
     allNavTriggers.forEach(trigger => {
         trigger.addEventListener('click', function(e) {
             e.preventDefault();
@@ -63,7 +74,14 @@
         });
     });
 
-    // 初始化视图，默认显示“关于我”
-    switchView('about');
+    // 页面加载时根据 URL hash 初始化视图
+    function initializeView() {
+        const initialTarget = location.hash.substring(1) || 'about';
+        // 将初始状态放入历史记录中，以便后退可以回到这里
+        history.replaceState({ section: initialTarget }, '', `#${initialTarget}`);
+        switchView(initialTarget, true);
+    }
+
+    initializeView();
 
 })();
